@@ -1,0 +1,32 @@
+{
+    "customer_address_id": "2816333",
+    "shop_shipment_channel_id": "98888",
+    "shipping_address": {
+        "id": 2816333,
+        "recipient_name": "กชนิภา อิสรั่น",
+        "address": "12 ซอยประชาร่วมใจ11. แขวงทรายกองดินใต้ เขตคลองสามวา กรุงเทพฯ",
+        "province": "กรุงเทพ",
+        "postal_code": "10510",
+        "country": "TH",
+        "country_id": 1,
+        "phone_number": "0990948476",
+        "email": "rnut.ist@gmail.com"
+    },
+    "is_android": false,
+    "is_liff": false,
+    "remark_buyer": "",
+    "point": null,
+    "ignore_point": null,
+    "ignore_l_m_coupon": null,
+    "promotion_id": "",
+    "items": [
+        {
+            "product_id": 319330276,
+            "product_variant_id": null,
+            "is_promotion": false,
+            "quantity": 1
+        }
+    ],
+    "cart_id": "",
+    "coupon_id": null
+}

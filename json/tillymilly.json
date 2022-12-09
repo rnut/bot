@@ -1,0 +1,17 @@
+{
+    "data": {
+        "shop_id": 233173,
+        "shop_name": "Tilly Milly",
+        "img_url": "https://profile.line-scdn.net/0hOPIRIqD9EH90KwUoTRpvKEhuHhIDBRY3DEQIEFQoTBxcT18vHx1aGVgjGh9QSV8uQE1dHVUjSUwL",
+        "shop_friends": 62319,
+        "default_tab": "PRODUCT",
+        "product_display": "POPULAR",
+        "sort_sold_out": "BOTTOM",
+        "search_id": "@tillymilly",
+        "is_show_gallery": false,
+        "brand_type": "UNVERIFIED",
+        "has_rlp": true,
+        "items": [],
+        "total_row": 16
+    }
+}

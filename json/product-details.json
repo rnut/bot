@@ -1,0 +1,64 @@
+{
+    "data": {
+        "product_name": "look 5 - winter wonderland",
+        "has_variant": true,
+        "variant_option_name1": "size",
+        "product_variants": [
+            {
+                "price": "590.00",
+                "id": 14026320,
+                "variant_option_value1": "6-9m",
+                "variant_option_value2": null,
+                "img_url": "https://obs.line-scdn.net:443/r/ect/ect/image_16696401504365021236c6a4565t10c0d6c6",
+                "available": 20,
+                "instant_discount": null,
+                "discounted_price": null,
+                "product_snapshot_id": 14026320
+            },
+            {
+                "price": "590.00",
+                "id": 14026321,
+                "variant_option_value1": "9-12m",
+                "variant_option_value2": null,
+                "img_url": "https://obs.line-scdn.net:443/r/ect/ect/image_16696401504365021236c6a4565t10c0d6c6",
+                "available": 20,
+                "instant_discount": null,
+                "discounted_price": null,
+                "product_snapshot_id": 14026321
+            },
+            {
+                "price": "590.00",
+                "id": 14026322,
+                "variant_option_value1": "12-18m",
+                "variant_option_value2": null,
+                "img_url": "https://obs.line-scdn.net:443/r/ect/ect/image_16696401504365021236c6a4565t10c0d6c6",
+                "available": 2,
+                "instant_discount": null,
+                "discounted_price": null,
+                "product_snapshot_id": 14026322
+            },
+            {
+                "price": "590.00",
+                "id": 14026323,
+                "variant_option_value1": "18-24",
+                "variant_option_value2": null,
+                "img_url": "https://obs.line-scdn.net:443/r/ect/ect/image_16696401504365021236c6a4565t10c0d6c6",
+                "available": 0,
+                "instant_discount": null,
+                "discounted_price": null,
+                "product_snapshot_id": 14026323
+            },
+            {
+                "price": "590.00",
+                "id": 14026324,
+                "variant_option_value1": "3T",
+                "variant_option_value2": null,
+                "img_url": "https://obs.line-scdn.net:443/r/ect/ect/image_16696401504365021236c6a4565t10c0d6c6",
+                "available": 0,
+                "instant_discount": null,
+                "discounted_price": null,
+                "product_snapshot_id": 14026324
+            }
+        ]
+    }
+}

@@ -1,0 +1,168 @@
+{
+    "data": {
+        "order": {
+            "customerId": 2405094,
+            "cachedCustomerName": null,
+            "orderStatus": "",
+            "paymentStatus": "",
+            "shipmentStatus": "",
+            "shipmentPrice": "0.00",
+            "subtotal": "70.00",
+            "total": "70.00",
+            "createdAt": null,
+            "expiredAt": null,
+            "checkedOutAt": null,
+            "items": [
+                {
+                    "productId": 319330276,
+                    "productName": "Watermelon 03 - Headband",
+                    "productCategory": "",
+                    "productVariantId": null,
+                    "variantOptionValue1": null,
+                    "variantOptionValue2": null,
+                    "imgUrl": "https://d.line-scdn.net/lcp-prod-photo/20200908_225/1599494126156Jqel0_JPEG/G5YZTWOC6KKTDPCZ1QG07MZY4DDF4L.jpg",
+                    "price": "70.00",
+                    "instantDiscount": null,
+                    "discountedPrice": null,
+                    "quantity": 1,
+                    "weight": "0.00",
+                    "isPromotion": false,
+                    "remainingUsage": null,
+                    "remainingQuota": null
+                }
+            ],
+            "weight": "0.00",
+            "discountAmount": "0.00",
+            "cachedShopPaymentChannelType": null,
+            "shipmentChannelId": null,
+            "cachedShopShipmentChannelName": null,
+            "cachedShopShipmentChannelType": null,
+            "cachedShopShipmentChannelDescription": null,
+            "sellerRemark": null,
+            "remarkBuyer": null,
+            "createdFrom": "SHOPEND",
+            "payments": [],
+            "shipments": [],
+            "shippingAddress": {
+                "id": null,
+                "country": null,
+                "address": null,
+                "province": null,
+                "email": null,
+                "countryId": null,
+                "recipientName": null,
+                "postalCode": null,
+                "phoneNumber": null
+            }
+        },
+        "shippingAddressList": [
+            {
+                "id": 2816333,
+                "country": "TH",
+                "address": "12 ซอยประชาร่วมใจ11. แขวงทรายกองดินใต้ เขตคลองสามวา กรุงเทพฯ",
+                "province": "กรุงเทพ",
+                "email": "rnut.ist@gmail.com",
+                "countryId": 1,
+                "recipientName": "กชนิภา อิสรั่น",
+                "postalCode": "10510",
+                "phoneNumber": "0990948476"
+            }
+        ],
+        "shipmentOptionList": [
+            {
+                "id": 98888,
+                "name": "Kerry",
+                "description": "",
+                "price": "40.00",
+                "type": "STANDARD",
+                "canCustomerSelect": true,
+                "shipmentCompanyId": 10,
+                "conditionType": "FIX_RATE",
+                "isEligible": true,
+                "shipmentCompany": null,
+                "isCod": false
+            },
+            {
+                "id": 30507,
+                "name": "Thailand Post-EMS",
+                "description": "กทม. 1-2 วันทำการ, ตจว. 2-3 วันทำการ",
+                "price": "35.00",
+                "type": "STANDARD",
+                "canCustomerSelect": true,
+                "shipmentCompanyId": 12,
+                "conditionType": "FIX_RATE",
+                "isEligible": true,
+                "shipmentCompany": null,
+                "isCod": false
+            },
+            {
+                "id": 46427,
+                "name": "กล่องของขวัญ ส่งแบบ EMS",
+                "description": "",
+                "price": "135.00",
+                "type": "STANDARD",
+                "canCustomerSelect": true,
+                "shipmentCompanyId": 1,
+                "conditionType": "FIX_RATE",
+                "isEligible": true,
+                "shipmentCompany": null,
+                "isCod": false
+            },
+            {
+                "id": 98886,
+                "name": "กล่องของขวัญ ส่งแบบ Kerry",
+                "description": "",
+                "price": "140.00",
+                "type": "STANDARD",
+                "canCustomerSelect": true,
+                "shipmentCompanyId": 10,
+                "conditionType": "FIX_RATE",
+                "isEligible": true,
+                "shipmentCompany": null,
+                "isCod": false
+            }
+        ],
+        "paymentChannelBankList": [
+            {
+                "id": 103227,
+                "logo": "https://vos.line-scdn.net/line-sc-logo/bank/bank-kasikorn.jpg",
+                "paymentChannelBankId": 50427,
+                "accName": "ASAWAROJ CO.,LTD",
+                "accNo": "0551790789",
+                "accBranch": "",
+                "name": "KASIKORNBANK PUBLIC COMPANY LTD.",
+                "nameTh": "ธนาคารกสิกรไทย จำกัด (มหาชน)",
+                "nameEn": "KASIKORNBANK PUBLIC COMPANY LTD."
+            }
+        ],
+        "shopDetail": {
+            "id": 16992,
+            "email": "asawaroj@gmail.com",
+            "telephone": "0651569289",
+            "address": "บริษัท อัศวโรจน์ จำกัด\n57/1 ซอยเอกชัย66/5 ถนนเอกชัย แขวงคลองบางพราน ",
+            "district": "บางบอน",
+            "province": "Bangkok",
+            "postcode": "10150",
+            "country": "TH",
+            "shopName": "Baby Lovett",
+            "shopProfileImageUrl": "https://profile.line-scdn.net/0hggvXuwxsOEhLISwMXq9HH3dkNiU8Dz4AM0IkLGYhNn9hF39OdU9_eTpzZitmFC8cIhJyfj1xZHBn",
+            "searchId": "@babylovett",
+            "randomId": "@myz8885u",
+            "adminLineId": "Leknicharath",
+            "adminFullname": "Nicharath Dilokasawaroj",
+            "adminEmail": "Nicharath@jiabhong.com",
+            "adminPhoneNumber": "0651569289",
+            "sellerStatus": "NORMAL",
+            "isTerminate": false,
+            "createdAt": "2020-04-25T04:43:49.000+0000",
+            "isVerifiedAdminPhoneNumber": true
+        },
+        "paymentChannelRlp": 984786,
+        "vacation": {
+            "status": false,
+            "startedAt": null,
+            "endedAt": null
+        },
+        "latestShippingAddressId": 2816333
+    }
+}
