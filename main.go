@@ -4,6 +4,7 @@ import (
 	"bot/models"
 	"bufio"
 	"encoding/json"
+	"flag"
 	"fmt"
 	"io/ioutil"
 	"net/http"
@@ -13,35 +14,49 @@ import (
 	"strings"
 )
 
-var dev = true
-var token = "eyJhbGciOiJIUzI1NiJ9.dlWQiUq9bD2lRWlXXieN9P6j_R3k-sATxWi2q6GYJbDz-6UWaccQl6T6BzLjRXvX_1tVHsu-G7OyCC6DlmoM_0hlcbwfpIrVWd4gmI7Pq3u3LqyLBz__ndc9Pj_NY1U4MLvBz7vv-oNsZPibBp-4beBHvrDhyCsWEShQui2_3qk.-eSsd4ph7xW1HVH-DEMz4aRkWgXL0N5J-Gz9YbpbuPY"
+// var dev = false
+// var token = "eyJhbGciOiJIUzI1NiJ9.dNt1CWz3chfApmj5VW7EtnA054wLHUxPbm-4JmULr4TPxjlpbka9shM4msYYj2UF9WTnFV_ZJcjZxKboWAzbLG8ZXP_boyD2CMapkUV645ee6rvYEjCVhEBsRFF3A9qLPfCZqegdKqy5rDGIz4dzNaOqEOuVUpgyQAh8GGTnUJY.OPVfo0Tb8rH8SrPNWjaEIRI9z87xRuaQBgO-lEKT9VQ"
 
 // ##### BABY Lovet ######
-var shopName = "@babylovett"
-var shopId = "16992"
-var shopShipmentChannelId = "30507"
-var targets = []string{"3T", "3t", "3-t", "3 T", "3 t"}
-var lowestProductId = 1000789687
-
+// var shopName = "@babylovett"
+// var shopId = "16992"
+// var shopShipmentChannelId = "30507"
+// var targets = []string{"3t", "3-t", "2-3t", "3-4t"}
+// var lowestProductId = 1003472347
 //##########
 
 // ##### TILLY ######
-// var shopName = "@tillymilly"
-// var shopId = "233173"
-// var shopShipmentChannelId = "302545"
-// var lowestProductId = 1003355528
-// var targets = []string{"3T", "3t", "3-t", "3 T", "3 t"}
+var shopName = "@tillymilly"
+var shopId = "233173"
+var shopShipmentChannelId = "302545"
+var lowestProductId = 1003355532
+var targets = []string{"3t", "3-t", "2-3t", "3-4t"}
 
 //##########
 
 func main() {
-	getProducts()
+	token := flag.String("token", "", "")
+	dev := flag.Bool("dev", false, "")
+	flag.Parse()
+
+	log("")
+	log("")
+	log("------------------------------------")
+	log("dev mode: ", *dev)
+	log("token: ", *token)
+	log("shop: ", shopName, " id:", shopId)
+	log("lowestProductId: ", 1003411793)
+	log("------------------------------------")
+	log("")
+	log("")
+
+	getProducts(*token, *dev)
+
 	input := bufio.NewScanner(os.Stdin)
 	input.Scan()
-	fmt.Println(input.Text())
 }
 
-func getProducts() {
+func getProducts(token string, dev bool) {
 	url := "https://customer-api.line-apps.com/search/graph"
 	method := "POST"
 
@@ -88,47 +103,35 @@ func getProducts() {
 	}
 	defer res.Body.Close()
 
-	fmt.Println("--------------------------")
-	fmt.Println("----- GET PRODUCTS -------")
-	fmt.Println("--------------------------")
-
 	var p *models.ProductList
 	decoder := json.NewDecoder(res.Body)
 	if err = decoder.Decode(&p); err != nil {
 		fmt.Println(err)
 		return
 	}
-	fmt.Println("total products: ", p.Data.ShopProductList.TotalProduct)
+	// fmt.Println("total products: ", p.Data.ShopProductList.TotalProduct)
 
 	hasNewItem := false
 	for _, v := range p.Data.ShopProductList.Products {
-		fmt.Println("###product###")
-		fmt.Println("product-id: ", v.ID)
-		fmt.Println("product-name: ", v.ProductName)
-		fmt.Println("#############")
+		// fmt.Println("product-id: ", v.ID, "product-name: ", v.ProductName)
 		pId, err := strconv.Atoi(v.ID)
 		if err != nil {
 			fmt.Println("err: ", err)
 		} else {
 			if pId > lowestProductId {
 				hasNewItem = true
-				fmt.Println("🎉 new product name: ", v.ProductName)
-				go getProductDetail(v.ID)
-			} else {
-				fmt.Println("🥶 waiting for new product....")
+				fmt.Println("🎉 new id:", pId, " name: ", v.ProductName)
+				go getProductDetail(v.ID, token, dev)
 			}
 		}
 	}
 	if !hasNewItem {
-		getProducts()
+		fmt.Println("🥶 waiting for new product....")
+		getProducts(token, dev)
 	}
-	fmt.Println("")
-	fmt.Println("--------------------------")
-	fmt.Println("--------------------------")
-	fmt.Println("--------------------------")
 }
 
-func getProductDetail(productId string) {
+func getProductDetail(productId string, token string, dev bool) {
 	fmt.Println("--------------------------")
 	fmt.Println("----Product Detail----")
 	fmt.Println("--------------------------")
@@ -189,10 +192,11 @@ func getProductDetail(productId string) {
 			fmt.Println("option2: ", v.VariantOptionValue2)
 			fmt.Println("------------")
 			sort.Strings(targets)
-			if contains(targets, v.VariantOptionValue1) {
+			lowerCase := strings.ReplaceAll(strings.ToLower(v.VariantOptionValue1), " ", "")
+			if contains(targets, lowerCase) {
 				if v.Available > 0 {
 					fmt.Println("🎯 meet target: ", v.VariantOptionValue1, " available: ", v.Available)
-					go placeOrder(productName, pId, strconv.Itoa(v.ID))
+					go placeOrder(productName, pId, strconv.Itoa(v.ID), token, dev)
 				} else {
 					fmt.Println("😩 meet target: ", v.VariantOptionValue1, " but not available")
 				}
@@ -203,12 +207,12 @@ func getProductDetail(productId string) {
 		fmt.Println("############")
 	} else {
 		if p.Data.Available > 0 {
-			go placeOrder(productName, pId, "null")
+			go placeOrder(productName, pId, "null", token, dev)
 		}
 	}
 }
 
-func placeOrder(name string, productId int, varientId string) {
+func placeOrder(name string, productId int, varientId string, token string, dev bool) {
 	fmt.Println("🚕-----Place Order----")
 	fmt.Println("productId: ", productId, " - productName: ", name, " - varientId: ", varientId)
 
@@ -306,4 +310,8 @@ func contains(s []string, searchterm string) bool {
 		}
 	}
 	return false
+}
+
+func log(a ...interface{}) {
+	fmt.Println(a...)
 }
